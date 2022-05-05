@@ -1,0 +1,48 @@
+package com.dio.santander.bankline.api.dto;
+
+import com.dio.santander.bankline.api.model.MovimentacaoTipo;
+
+import javax.persistence.Column;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import java.time.LocalDateTime;
+
+public class NovaMovimentacao {
+
+    private String descricao;
+    private Double valor;
+    private MovimentacaoTipo tipo;
+    private int idConta;
+
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+
+    public Double getValor() {
+        return valor;
+    }
+
+    public void setValor(Double valor) {
+        this.valor = valor;
+    }
+
+    public MovimentacaoTipo getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(MovimentacaoTipo tipo) {
+        this.tipo = tipo;
+    }
+
+    public int getIdConta() {
+        return idConta;
+    }
+
+    public void setIdConta(int idConta) {
+        this.idConta = idConta;
+    }
+}
