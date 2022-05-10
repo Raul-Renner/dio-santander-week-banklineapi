@@ -16,14 +16,16 @@ import java.util.List;
 public class MovimentacaoController {
 
     @Autowired
-    private MovimentacaoRepository movimentacaoRepository;
-
-    @Autowired
     private MovimentacaoService movimentacaoService;
 
     @GetMapping
-    public List<Movimentacao> findAll(){
-        return movimentacaoRepository.findAll();
+    public List<Movimentacao> findAllMovimentacoes(){
+        return movimentacaoService.findAll();
+    }
+
+    @GetMapping("/{idConta}")
+    public List<Movimentacao> findAllMovimentacoesByIdConta(@PathVariable("idConta") Integer idConta){
+        return movimentacaoService.findAllMovimentacoesByConta(idConta);
     }
 
     @PostMapping

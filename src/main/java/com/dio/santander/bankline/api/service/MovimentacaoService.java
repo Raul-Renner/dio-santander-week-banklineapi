@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Service
 public class MovimentacaoService {
@@ -48,5 +49,13 @@ public class MovimentacaoService {
 
         movimentacaoRepository.save(movimentacao);
 
+    }
+
+    public List<Movimentacao> findAll(){
+        return movimentacaoRepository.findAll();
+    }
+
+    public List<Movimentacao> findAllMovimentacoesByConta(Integer idConta){
+        return movimentacaoRepository.findByIdConta(idConta);
     }
 }
